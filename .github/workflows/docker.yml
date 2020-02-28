@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: Creating new docker image
+    - name: Creating new docker image
     - uses: zenato/docker-action@master
     - with:
         username: ${{ secrets.DOCKER_USERNAME }}
