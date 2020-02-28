@@ -1,4 +1,4 @@
-name: CI
+name: Docker Image Deploy
 
 on: 
   push:
@@ -14,12 +14,6 @@ jobs:
       - name: Set output
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF:10}
-      - name: Check output
-        env:
-          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-        run: |
-          echo $RELEASE_VERSION
-          echo ${{ steps.vars.outputs.tag }}
       - name: Creating new docker image
         uses: zenato/docker-action@master 
         with:
