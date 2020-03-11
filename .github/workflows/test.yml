@@ -1,4 +1,4 @@
-name: Docker Image Deploy
+name: Test build.sh
 
 on: 
   push:
@@ -15,7 +15,8 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF:10}
       - name: Creating new docker image
-        run: ./build.sh
+        run: |
+          build.sh
         with:
           login: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
