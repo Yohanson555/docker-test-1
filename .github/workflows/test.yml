@@ -14,6 +14,6 @@ jobs:
       - name: Set output
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF:10}
-      - name: Creating new docker image
+      - name: Running bash script
         run: |
-          build.sh
+          bash build.sh
