@@ -1,0 +1,1 @@
+echo "Test bash run: $login $password $ver"
