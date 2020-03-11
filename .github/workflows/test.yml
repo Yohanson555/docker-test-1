@@ -17,8 +17,3 @@ jobs:
       - name: Creating new docker image
         run: |
           build.sh
-        with:
-          login: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-#          repository: yohanson555/test-1
-          ver: ${{ steps.vars.outputs.tag }}
